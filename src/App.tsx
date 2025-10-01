@@ -1,3 +1,9 @@
+import WhyReact from "@/components/WhyReact";
+
 export default function App() {
-  return <div>App</div>;
+  return (
+    <div className="max-w-2xl mx-auto">
+      <WhyReact />
+    </div>
+  );
 }
