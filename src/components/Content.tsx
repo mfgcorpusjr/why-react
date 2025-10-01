@@ -8,7 +8,7 @@ export default function Content() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
-    <div>
+    <main>
       <div className="flex flex-wrap gap-1">
         {data.map((d, index) => (
           <Button
@@ -30,6 +30,6 @@ export default function Content() {
           ))}
         </ul>
       </div>
-    </div>
+    </main>
   );
 }
