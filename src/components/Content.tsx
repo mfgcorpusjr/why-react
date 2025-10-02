@@ -21,10 +21,10 @@ export default function Content() {
         ))}
       </div>
 
-      <div className="bg-slate-800 p-8 rounded-b-md">
+      <div className="bg-slate-800 p-8 rounded-b-md rounded-tr-md">
         <ul className="space-y-4">
           {data[selectedIndex].items.map((item) => (
-            <li key={item} className="text-white">
+            <li key={item} className="text-white text-sm">
               &#8226; {item}
             </li>
           ))}
