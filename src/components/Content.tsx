@@ -1,35 +1,24 @@
-import { useState } from "react";
+import Tabs from "@/components/Tabs";
 
-import Button from "@/components/Button";
-
-import data from "@/data";
+import TOPICS from "@/data";
 
 export default function Content() {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  return (
-    <main>
-      <div className="flex flex-wrap gap-1">
-        {data.map((d, index) => (
-          <Button
-            key={index}
-            isActive={index === selectedIndex}
-            onClick={() => setSelectedIndex(index)}
-          >
-            {d.title}
-          </Button>
+  const tabs = TOPICS.map((topic) => {
+    const content = (
+      <ul className="space-y-4">
+        {topic.items.map((item) => (
+          <li key={item} className="text-white text-sm">
+            &#8226; {item}
+          </li>
         ))}
-      </div>
+      </ul>
+    );
 
-      <div className="bg-slate-800 p-8 rounded-b-md rounded-tr-md">
-        <ul className="space-y-4">
-          {data[selectedIndex].items.map((item) => (
-            <li key={item} className="text-white text-sm">
-              &#8226; {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </main>
-  );
+    return {
+      label: topic.title,
+      content,
+    };
+  });
+
+  return <Tabs tabs={tabs} />;
 }
